@@ -27,19 +27,19 @@ https://itunes.apple.com/cn/app/jsbox/id1312014438?mt=8 App Store价格为50RMB�
 有好几种运行方式：
 
 1.直接在JSBox中运行：
-<img src="images/jsbox_run.gif" alt="jsbox直接运行">
+<img src="Images/jsbox_run.gif" alt="jsbox直接运行">
 
 2.在widget里运行（推荐）:
-<img src="images/widget.gif" alt="widget运行">
+<img src="Images/widget.gif" alt="widget运行">
 
 3.使用Siri唤起执行（推荐）:
-<img src="images/siri_run_jsbox.gif" alt="siri运行jsbox">
+<img src="Images/siri_run_jsbox.gif" alt="siri运行jsbox">
 
 4.使用Siri执行带JSBox的捷径（推荐）：
-<img src="images/siri.gif" alt="siri运行捷径">
+<img src="Images/siri.gif" alt="siri运行捷径">
 
 5.点击图标运行（比较推荐）:
-<img src="images/icon_launch_jsbox.gif" alt="桌面icon">
+<img src="Images/icon_launch_jsbox.gif" alt="桌面icon">
 
 # 使用方法
   
@@ -97,4 +97,4 @@ https://itunes.apple.com/cn/app/jsbox/id1312014438?mt=8 App Store价格为50RMB�
 
 # License
 
-This project is released under the Apache License 2.0 license. See the LICENSE file for more info.
+This project is released under the Apache License 2.0 license. See the [LICENSE file](LICENSE) for more info.
