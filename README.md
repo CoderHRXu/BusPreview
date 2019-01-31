@@ -20,25 +20,30 @@
 - 捷径（可选）
 
 JSBox是个很强大的app，可玩性很高，一个创造工具的工具, 具体了解可以点击[这里](https://sspai.com/post/42361)
-https://itunes.apple.com/cn/app/jsbox/id1312014438?mt=8 App Store价格为50RMB。
+App Store价格为50RMB [市场链接](https://itunes.apple.com/cn/app/jsbox/id1312014438?mt=8)。
 
 
 # 最终效果
 有好几种运行方式：
 
 1.直接在JSBox中运行：
+
 <img src="Images/jsbox_run.gif" alt="jsbox直接运行">
 
 2.在widget里运行（推荐）:
+
 <img src="Images/widget.gif" alt="widget运行">
 
 3.使用Siri唤起执行（推荐）:
+
 <img src="Images/siri_run_jsbox.gif" alt="siri运行jsbox">
 
 4.使用Siri执行带JSBox的捷径（推荐）：
+
 <img src="Images/siri.gif" alt="siri运行捷径">
 
 5.点击图标运行（比较推荐）:
+
 <img src="Images/icon_launch_jsbox.gif" alt="桌面icon">
 
 # 使用方法
