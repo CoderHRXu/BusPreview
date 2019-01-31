@@ -1,12 +1,12 @@
 /******* config ***********/
 
-var stopID = 10003177; // 独墅湖图书馆id
-var stopName = "独墅湖图书馆";
-var lineID = "10000522";
-var busName = "110(南线)";
-var url = "http://app.2500.tv/bus/api_line_status.php";
-var result = "未知";
-var current = 200;
+var stopID    = 10003177; // 独墅湖图书馆id
+var stopName  = "独墅湖图书馆";
+var lineID    = "10000522";
+var busName   = "110(南线)";
+var url       = "http://app.2500.tv/bus/api_line_status.php";
+var result    = "未知";
+var current   = 200;
 
 /******* UI ***********/
 
@@ -17,34 +17,30 @@ var templateCell = {
     bgcolor: $color("clear")
   },
   views: [{
-      type: "label",
-      props: {
-        id: "stopNameLabel",
-        // bgcolor: $color("#474b51"),
-        // textColor: $color("#abb2bf"),
-        align: $align.center,
-        font: $font(20)
-      },
-      layout: function (make, view) {
-        make.left.inset(20)
-        make.centerY.equalTo(0);
-      }
+    type: "label",
+    props: {
+      id: "stopNameLabel",
+      align: $align.center,
+      font: $font(20)
     },
+    layout: function(make, view) {
+      make.left.inset(20)
+      make.centerY.equalTo(0);
+    }
+  },
     {
       type: "label",
       props: {
         id: "busNoLabel",
-        // bgcolor: $color("#474b51"),
         textColor: $color("#3399ff"),
         align: $align.center,
         font: $font(15)
       },
-      layout: function (make, view) {
+      layout: function(make, view) {
         make.right.inset(10)
         make.centerY.equalTo(0);
       },
-    }
-  ]
+  }]
 }
 
 var listView = {
@@ -54,7 +50,7 @@ var listView = {
     template: templateCell,
     data: []
   },
-  layout: function (make, view) {
+  layout:function(make, view) {
     make.left.right.bottom.inset(0)
     make.top.equalTo(80)
   },
@@ -63,19 +59,18 @@ var listView = {
 var topView = {
   type: "label",
   props: {
-    // bgcolor: $color("#FF0000"),
-    id: 'topLabel',
+    id:'topLabel',
     textColor: $color("#3399ff"),
     text: "正在请求....",
     autoFontSize: true,
     align: $align.center,
     lines: 0,
   },
-  layout: function (make, view) {
+  layout: function(make, view) {
     make.top.left.right.inset(0);
     make.height.equalTo(80);
   },
-
+  
 }
 
 $ui.render({
@@ -88,9 +83,6 @@ $ui.render({
 /******* Network ***********/
 $http.post({
   url: url,
-  header: {
-    ContentType: "text/html"
-  },
   form: {
     lineID: lineID
   },
@@ -115,17 +107,17 @@ function handleBusResponse(resp) {
         } else if (busStop.BusInfo.length == 0) {
           result = i - current == 0 ? busName + "刚刚到达" + stopName : busName + "还有" + (i - current) + "站路到达" + stopName
         } else {
-          var next = "，下一班还有" + (i - current) + "站路到达"
-          result = busName + busStop.BusInfo + "于" + busStop.InTime + "到达" + stopName + next;
+          var next = "\n下一班还有" + (i - current) + "站路到达"
+          result = busStop.BusInfo + "于" + busStop.InTime + "到达" + stopName + next;
         }
         busArray.push(busStop);
         break;
-      } else { // 未遍历到目的站点
+      } else {// 未遍历到目的站点
 
         if (busStop.BusInfo.length > 0) { // 有车
-          current = i;
-          busArray = [];
-          busArray = [busStop];
+          current   = i;
+          busArray  = [];
+          busArray  = [busStop];
         } else { // 没有车 
           busArray.push(busStop);
         }
@@ -133,26 +125,26 @@ function handleBusResponse(resp) {
 
     }
     // $ui.alert(result);
-
-    var label = $("topLabel");
-    label.text = result;
+    /** 更新UI **/
+    var label     = $("topLabel");
+    label.text    = result;
     var dataArray = [];
-    for (var i in busArray) {
+    for(var i in busArray){
       var busStop = busArray[i];
-      var j = i + 1.0;
-      var obj = {
-        stopNameLabel: {
-          text: (parseInt(i) + 1) + busStop.StationCName
+      var j       = i + 1.0;
+      var obj     = {
+          stopNameLabel: {
+          text: (parseInt(i)+1) + busStop.StationCName
         },
-        busNoLabel: {
+          busNoLabel:{
           text: busStop.BusInfo.length > 0 ? busStop.BusInfo + " " + busStop.InTime : ""
         }
       }
       dataArray.push(obj);
     }
 
-    var list = $("listView");
-    list.data = dataArray;
+    var list    = $("listView");
+    list.data   = dataArray;
 
   } else {
 
