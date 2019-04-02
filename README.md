@@ -101,5 +101,6 @@ App Store价格为50RMB [市场链接](https://itunes.apple.com/cn/app/jsbox/id1
 个人博客：http://www.akpop.top/2019/01/30/Bus_JSBox/
 
 # License
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
-This project is released under the Apache License 2.0 license. See the [LICENSE file](LICENSE) for more info.
+This project is released under the Apache License 2.0 and Anti-996 license. See the [LICENSE file](LICENSE) for more info.
