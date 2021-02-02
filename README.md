@@ -67,7 +67,7 @@ App Store价格为50RMB [市场链接](https://itunes.apple.com/cn/app/jsbox/id1
   
   ```
   查询线路站点信息
-  路径： http://app.2500.tv/bus/api_line_status.php
+  路径： http://app.2500.tv/bus1/api_line_status_a.php
   请求方式：POST
   参数：lineID 
   110南线id 10000522
