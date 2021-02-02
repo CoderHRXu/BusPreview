@@ -4,7 +4,7 @@ var stopID    = 10003177; // 独墅湖图书馆id
 var stopName  = "独墅湖图书馆";
 var lineID    = "10000522";
 var busName   = "110(南线)";
-var url       = "http://app.2500.tv/bus/api_line_status.php";
+var url       = "http://app.2500.tv/bus1/api_line_status_a.php";
 var result    = "未知";
 var current   = 200;
 
